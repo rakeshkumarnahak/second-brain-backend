@@ -8,11 +8,12 @@ import fs from "fs";
 import { uploadToDrive } from "../../utils/driveHelper.js";
 import { getAudioBuffer } from "../../utils/audioBufferHelper.js";
 import { extractFromAudio } from "./audioContentExtractor.js";
+import { summarise } from "../llm/summarizer.js";
 
 dotenv.config();
 
 export const extractAudioFromYoutubeVideoLink = async (
-  youtubeLink = "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+  youtubeLink = "https://www.youtube.com/watch?v=PQ2WjtaPfXU"
 ) => {
   try {
     if (!ytdl.validateURL(youtubeLink)) {
@@ -44,7 +45,8 @@ export const extractAudioFromYoutubeVideoLink = async (
     }
 
     const transcription = fileId && (await extractFromAudio(fileId));
-    console.log(transcription);
+    const summarisedData = await summarise(transcription);
+    console.log(summarisedData);
     return { content: transcription, audioExtractionStatus: true };
   } catch (error) {
     console.log(error);
