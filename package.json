@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@prisma/client": "^6.5.0",
+    "assemblyai": "^4.9.0",
+    "child_process": "^1.0.2",
+    "dotenv": "^16.4.7",
+    "googleapis": "^146.0.0",
+    "mime-types": "^2.1.35",
+    "tmp": "^0.2.3",
+    "yt-dlp-exec": "^1.0.2",
+    "ytdl-core": "^4.11.5"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prisma": "^6.5.0"
+  }
+}

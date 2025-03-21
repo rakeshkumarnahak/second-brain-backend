@@ -1,0 +1,5 @@
+node_modules
+google-drive-oAuth-credentials.json
+service_account.json
+.env
+./src/database/.env
