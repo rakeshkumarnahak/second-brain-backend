@@ -1,7 +1,8 @@
-require("dotenv").config();
+import dotenv from "dotenv";
 
-module.exports = {
-  PORT: process.env.PORT || 5000,
-  DB_URI: process.env.DB_URI,
-  LLM_API_KEY: process.env.LLM_API_KEY,
-};
+dotenv.config();
+
+export const PORT = process.env.PORT || 5000;
+export const LLM_API_KEY = process.env.LLM_API_KEY;
+export const ASSEMBLYAI_API_KEY = process.env.ASSEMBLYAI_API_KEY;
+export const GOOGLE_GEMINI_API_KEY = process.env.GOOGLE_GEMINI_API_KEY;

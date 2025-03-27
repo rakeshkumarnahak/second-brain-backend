@@ -1,18 +1,15 @@
 import { AssemblyAI } from "assemblyai";
-import dotenv from "dotenv";
+import { ASSEMBLYAI_API_KEY } from "../core/config";
 
-dotenv.config();
-
-export async function extractFromAudio(fileId) {
-  console.log(fileId);
+export async function extractFromAudio(audioUrl) {
+  console.log(audioUrl);
   console.log("Generating text transcript from audio...");
   try {
     const assemblyAIClient = new AssemblyAI({
-      apiKey:
-        process.env.ASSEMBLYAI_API_KEY || "8a601aceca8f409987fc2c20f62922c4",
+      apiKey: ASSEMBLYAI_API_KEY,
     });
 
-    const audioUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    // const audioUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
     const params = {
       audio: audioUrl,

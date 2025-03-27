@@ -1,10 +1,6 @@
 import ytdlp from "yt-dlp-exec";
 import ytdl from "ytdl-core";
 import dotenv from "dotenv";
-import { spawn } from "child_process";
-import { PassThrough } from "stream";
-import tmp from "tmp";
-import fs from "fs";
 import { uploadToDrive } from "../../utils/driveHelper.js";
 import { getAudioBuffer } from "../../utils/audioBufferHelper.js";
 import { extractFromAudio } from "./audioContentExtractor.js";
@@ -13,7 +9,7 @@ import { summarise } from "../llm/summarizer.js";
 dotenv.config();
 
 export const extractAudioFromYoutubeVideoLink = async (
-  youtubeLink = "https://www.youtube.com/watch?v=PQ2WjtaPfXU"
+  youtubeLink
 ) => {
   try {
     if (!ytdl.validateURL(youtubeLink)) {

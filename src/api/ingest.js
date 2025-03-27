@@ -1,5 +1,5 @@
-const express = require("express");
-const { processInput } = require("../core/dependencies");
+import express from "express";
+import { processInput } from "../core/dependencies.js";
 
 const router = express.Router();
 
@@ -13,4 +13,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,7 +1,7 @@
-const { extractFromYouTube } = require("../extractors/youtubeExtractor");
-const { extractFromAudio } = require("../extractors/audioExtractor");
-const { extractFromWeb } = require("../extractors/webScraper");
-const { extractFromDocument } = require("../extractors/documentParser");
+import { extractFromYouTube } from "../extractors/youtubeContentExtractor.js";
+import { extractFromAudio } from "../extractors/audioContentExtractor.js";
+import { extractFromWeb } from "../extractors/webContentExtractor.js";
+import { extractFromDocument } from "../extractors/documentParser.js";
 
 const processInput = async (sourceType, url) => {
   switch (sourceType) {

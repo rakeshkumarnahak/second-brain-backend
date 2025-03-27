@@ -1,5 +1,5 @@
-const express = require("express");
-const { fetchSummaries } = require("../database/crud");
+import express from "express";
+import { fetchSummaries } from "../database/crud.js";
 
 const router = express.Router();
 

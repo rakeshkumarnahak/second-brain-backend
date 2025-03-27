@@ -1,5 +1,5 @@
-const express = require("express");
-const { summarizeText } = require("../llm/summarizer");
+import express from "express";
+import { summarizeText } from "../llm/summarizer.js";
 
 const router = express.Router();
 
